@@ -80,12 +80,12 @@
     <Build Include="ME_Config\Stored Procedures\sp_insertActivityEvent.sql" />
     <Build Include="ME_Config\Stored Procedures\sp_ADFGetDynamicRDBMSQuery.sql" />
     <Build Include="Security\ME_Data.sql" />
-    <Build Include="External Resources\metadatalake.sql" />
-    <Build Include="External Resources\Metadataengine.sql" />
     <Build Include="Metadata\Tables\Attribute.sql" />
     <Build Include="Metadata\Tables\Object.sql" />
     <Build Include="Metadata\Tables\Entity.sql" />
     <Build Include="ME_Data\Stored Procedures\sp_ProcessDynamicStagedMetadata.sql" />
     <Build Include="Security\Metadata.sql" />
+    <Build Include="ME_Config\Functions\fnGetRMDBSQuerySelectColumnNames.sql" />
+    <Build Include="ME_Data\Stored Procedures\sp_ADFGetSQLConfig.sql" />
   </ItemGroup>
 </Project>

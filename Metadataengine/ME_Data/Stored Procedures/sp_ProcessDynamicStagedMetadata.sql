@@ -1,4 +1,6 @@
-﻿CREATE Procedure ME_Data.sp_ProcessDynamicStagedMetadata
+﻿CREATE Procedure ME_Data.sp_ProcessDynamicStagedMetadata 
+(@DataSetType VARCHAR(100)
+)
 AS
 BEGIN
 --Initial Reset... 
@@ -38,7 +40,12 @@ SELECT [MetadataQuerySource]
 	   
 	INTO #TTBase
   FROM [ME_Data].[MetadataEntityStage]
-  WHERE [MetadataQuerySource]='Dynamic'
+  WHERE [MetadataQuerySource]='Dynamic' 
+		AND DATASETID IN	(
+							SELECT id 
+							from [ME_Config].[DataSet] 
+							where @DataSetType=DataSetType
+							)
 
 --Get All Distinct Entities
 --DROP TABLE #TTEntity
