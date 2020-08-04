@@ -68,6 +68,8 @@
     <Folder Include="Metadata\" />
     <Folder Include="Metadata\Tables\" />
     <Folder Include="ME_Data\Stored Procedures\" />
+    <Folder Include="ME_Secure\" />
+    <Folder Include="ME_Secure\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="ME_Config\Tables\Connection.sql" />
@@ -87,5 +89,9 @@
     <Build Include="Security\Metadata.sql" />
     <Build Include="ME_Config\Functions\fnGetRMDBSQuerySelectColumnNames.sql" />
     <Build Include="ME_Data\Stored Procedures\sp_ADFGetSQLConfig.sql" />
+    <Build Include="ME_Secure\Tables\DW_Nodes.sql" />
+    <Build Include="ME_Secure\Tables\DL_Containers.sql" />
+    <Build Include="ME_Config\Functions\fnGetDatatypedeff.sql" />
+    <Build Include="Security\ME_Secure.sql" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-﻿CREATE Procedure ME_Data.sp_ProcessDynamicStagedMetadata 
+﻿CREATE Procedure [ME_Data].[sp_ProcessDynamicStagedMetadata] 
 (@DataSetType VARCHAR(100)
 )
 AS
@@ -35,7 +35,7 @@ SELECT [MetadataQuerySource]
       ,[MetadataObjectIdentityFlag]
       ,[MetadataObjectRefreshUTCTimeStamp]
 
-	  ,MetadataObjectHash=CONVERT(BIGINT,HASHBYTES('SHA1',CONCAT([DataSetID]
+	  ,MetadataObjectHash=CONVERT(BIGINT,HASHBYTES('SHA1',CONCAT([DataSetID],'¬'
       ,[MetadataObjectName])))
 	   
 	INTO #TTBase
