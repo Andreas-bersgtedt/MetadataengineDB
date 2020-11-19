@@ -37,7 +37,7 @@ SELECT	MetadataQuerySource=Convert(VARCHAR(50),¬Dynamic¬)
 FROM	sys.columns C
 		INNER JOIN sys.tables T on C.object_id=T.object_id
 		INNER JOIN sys.schemas S ON T.schema_id=S.schema_id
-		INNER JOIN sys.types TY on C.system_type_id=TY.system_type_id
+		INNER JOIN sys.types TY on C.system_type_id=TY.system_type_id  AND TY.system_type_id=TY.user_type_id
 WHERE	T.Name = ¬<DataSetName>¬
 		AND S.name = ¬<SchemaName>¬';
 SET @Query=REPLACE(@Query,'¬','''')

@@ -246,7 +246,8 @@ WHEN NOT MATCHED BY TARGET
 
 --Purge stage table of data
 DELETE  FROM [ME_Data].[MetadataEntityStage]
-WHERE CONVERT(BIGINT,HASHBYTES('SHA1',CONCAT([DataSetID],[MetadataObjectName]))) IN (SELECT DISTINCT MetadataObjectHash FROM #TTBase)
+WHERE CONVERT(BIGINT,HASHBYTES('SHA1',CONCAT([DataSetID],'¬'
+      ,[MetadataObjectName]))) IN (SELECT DISTINCT MetadataObjectHash FROM #TTBase)
 --Cleanup
 DROP TABLE #TTAttribute
 DROP TABLE #TTBase
